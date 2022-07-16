@@ -1,4 +1,3 @@
-README.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -36,4 +35,4 @@ build/
 .DS_Store
 
 ### RocksDB ###
-/state-store
+state-store/
