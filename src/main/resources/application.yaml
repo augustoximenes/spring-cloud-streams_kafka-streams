@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        streams:
+          binder:
+            applicationId: streams
+            brokers: localhost:9092
+            configuration:
+              state.dir: state-store
+              commit.interval.ms: 500
+      function:
+        definition: process
+      bindings:
+        process-in-0:
+          destination: tp_prospects
+        process-in-1:
+          destination: tp_accounts
+        process-in-2:
+          destination: tp_enrichment_accounts
+        process-out-0:
+          destination: tp_clients
