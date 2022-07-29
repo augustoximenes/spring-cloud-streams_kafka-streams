@@ -68,6 +68,10 @@ The restoration of a state store is byte based. During restoration, Kafka Stream
 
 The innermost layer of a state store can be any built-in or user-defined state store that implements the state store interface exposed by Kafka Streams. The default state store used in Kafka Streams is RocksDB. Kafka Streams developers initially chose RocksDB because they wanted a write-optimized store. Since RocksDB is the default state store, Kafka Streams provides the means to configure and monitor RocksDB state stores used in a Kafka Streams application.
 
+![Diagram](docs/imgs/topics_list.png)
+
+List of topics containning the change log restoration topics
+
 Reference: https://www.confluent.io/blog/how-to-tune-rocksdb-kafka-streams-state-stores-performance/
 
 ## Fault-tolerant processing
