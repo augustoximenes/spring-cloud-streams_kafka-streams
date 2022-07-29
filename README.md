@@ -91,4 +91,6 @@ If a container failure means that our account balances table needs to be rebuilt
 ![Diagram](docs/imgs/fault_tolerant_processing_2.png)
 Figure 2. A task runs on machine A. The (partition of the) table it uses is continuously backed up into a Kafka topic. If machine A dies, the task will be migrated to another machine. There, the table will be restored to exactly the state it was when the task stopped on the original machine. Once the restoration is complete, the task will resume processing on machine B.
 
-Reference: https://www.confluent.io/blog/kafka-streams-tables-part-4-elasticity-fault-tolerance-advanced-concepts
+References: 
+- https://www.confluent.io/blog/kafka-streams-tables-part-4-elasticity-fault-tolerance-advanced-concepts
+- https://developer.confluent.io/learn-kafka/kafka-streams/stateful-fault-tolerance/
