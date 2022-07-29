@@ -1,6 +1,8 @@
 # Spring Cloud Stream - Kafka Streams
 Sample project which illustrates how to use Spring Cloud Stream whit Kafka Streams.
 
+Reference: https://cloud.spring.io/spring-cloud-stream-binder-kafka/spring-cloud-stream-binder-kafka.html#_kafka_streams_properties
+
 ### Kafka Directory
 [Download](https://kafka.apache.org/downloads) the latest Kafka release and extract it:
 ```
@@ -72,7 +74,10 @@ The innermost layer of a state store can be any built-in or user-defined state s
 
 List of topics containning the change log restoration topics
 
-Reference: https://www.confluent.io/blog/how-to-tune-rocksdb-kafka-streams-state-stores-performance/
+Reference: 
+- https://www.confluent.io/blog/how-to-tune-rocksdb-kafka-streams-state-stores-performance/
+- https://spring.io/blog/2019/12/09/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-6-state-stores-and-interactive-queries
+- https://docs.spring.io/spring-cloud-stream-binder-kafka/docs/current/reference/html/spring-cloud-stream-binder-kafka.html
 
 ## Fault-tolerant processing
 Streams and tables are always fault tolerant because their data is stored reliably and durably in Kafka. This should be relatively easy to understand for streams by now as they map to Kafka topics in a straightforward manner. If something breaks while processing a stream, then we just need to re-read the underlying topic again.
