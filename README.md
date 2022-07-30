@@ -2,6 +2,7 @@
 Sample project which illustrates how to use Spring Cloud Stream whit Kafka Streams.
 
 References: 
+- https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/
 - https://cloud.spring.io/spring-cloud-stream-binder-kafka/spring-cloud-stream-binder-kafka.html#_kafka_streams_properties
 - https://docs.confluent.io/platform/current/streams/architecture.html
 
