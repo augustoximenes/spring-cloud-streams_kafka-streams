@@ -1,7 +1,9 @@
 # Spring Cloud Stream - Kafka Streams
 Sample project which illustrates how to use Spring Cloud Stream whit Kafka Streams.
 
-Reference: https://cloud.spring.io/spring-cloud-stream-binder-kafka/spring-cloud-stream-binder-kafka.html#_kafka_streams_properties
+References: 
+- https://cloud.spring.io/spring-cloud-stream-binder-kafka/spring-cloud-stream-binder-kafka.html#_kafka_streams_properties
+- https://docs.confluent.io/platform/current/streams/architecture.html
 
 ### Kafka Directory
 [Download](https://kafka.apache.org/downloads) the latest Kafka release and extract it:

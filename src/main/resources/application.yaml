@@ -16,9 +16,10 @@ spring:
         streams:
           binder:
             applicationId: streams
+            #brokers: broker:9093
             brokers: localhost:9092
             configuration:
-              state.dir: state-store
+              #state.dir: state-store
               commit.interval.ms: 500
           bindings:
             tp_prospects:
