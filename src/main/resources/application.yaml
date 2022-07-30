@@ -1,12 +1,20 @@
 server:
   port: 8080
+
 management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  health:
+    binders:
+      enabled: true
   endpoints:
     web:
       exposure:
         include:
           - bindings
           - "*"
+
 spring:
   cloud:
     stream:
@@ -28,6 +36,9 @@ spring:
             #brokers: broker:9093
             brokers: localhost:9092
             configuration:
+              num:
+                stream:
+                  threads: 2
               #state.dir: state-store
               commit.interval.ms: 500
           bindings:

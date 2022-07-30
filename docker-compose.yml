@@ -31,6 +31,8 @@ services:
       context: .
       dockerfile: Dockerfile
     hostname: kafka-streams
+    ports:
+      - "8080-8099:8080"
     depends_on:
       - zookeeper
       - broker
