@@ -24,10 +24,17 @@ $ bin/kafka-server-start.sh config/server.properties
 
 ### Create Topics
 ```
-$ bin/kafka-topics.sh --create --topic tp_prospects --bootstrap-server localhost:9092
-$ bin/kafka-topics.sh --create --topic tp_accounts --bootstrap-server localhost:9092
-$ bin/kafka-topics.sh --create --topic tp_enrichment_accounts --bootstrap-server localhost:9092
-$ bin/kafka-topics.sh --create --topic tp_clients --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic tp_prospects --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic tp_accounts --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic tp_enrichment_accounts --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic tp_clients --partitions 4 --bootstrap-server localhost:9092
+```
+
+### Create Changelog Topics
+```
+$ bin/kafka-topics.sh --create --topic streams-tp_prospects-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic streams-tp_accounts-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic streams-tp_enrichment_accounts-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
 ```
 
 ### Message Producer
@@ -81,6 +88,10 @@ Reference:
 - https://www.confluent.io/blog/how-to-tune-rocksdb-kafka-streams-state-stores-performance/
 - https://spring.io/blog/2019/12/09/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-6-state-stores-and-interactive-queries
 - https://docs.spring.io/spring-cloud-stream-binder-kafka/docs/current/reference/html/spring-cloud-stream-binder-kafka.html
+
+## Scalability
+
+![Diagram](docs/imgs/scalability.png)
 
 ## Fault-tolerant processing
 Streams and tables are always fault tolerant because their data is stored reliably and durably in Kafka. This should be relatively easy to understand for streams by now as they map to Kafka topics in a straightforward manner. If something breaks while processing a stream, then we just need to re-read the underlying topic again.
