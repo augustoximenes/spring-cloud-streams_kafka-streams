@@ -33,12 +33,12 @@ spring:
         streams:
           binder:
             applicationId: streams
-            #brokers: broker:9093
-            brokers: localhost:9092
+            brokers: broker:9093
+            #brokers: localhost:9092
             configuration:
-              num:
-                stream:
-                  threads: 2
+              #num:
+                #stream:
+                  #threads: 2
               #state.dir: state-store
               commit.interval.ms: 500
           bindings:
