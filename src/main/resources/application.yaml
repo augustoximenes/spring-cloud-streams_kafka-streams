@@ -13,6 +13,7 @@ management:
       exposure:
         include:
           - bindings
+          - prometheus
           - "*"
 
 spring:
@@ -33,8 +34,8 @@ spring:
         streams:
           binder:
             applicationId: streams
-            brokers: broker:9093
-            #brokers: localhost:9092
+            #brokers: broker:9093
+            brokers: localhost:9092
             configuration:
               #num:
                 #stream:

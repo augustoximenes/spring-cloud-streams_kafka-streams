@@ -56,4 +56,4 @@ services:
       - ./observability/grafana/grafana_datasources.yml:/etc/grafana/provisioning/datasources/all.yaml
       - ./observability/grafana/grafana_config.ini:/etc/grafana/config.ini
     ports:
-      - 3000:3000
+      - "3000:3000"
