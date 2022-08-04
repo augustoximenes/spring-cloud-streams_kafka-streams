@@ -1,8 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
-  name: kafka-cluster
-  namespace: kafka-streams
+  name: streams
 spec:
   kafka:
     version: 3.2.0
@@ -18,7 +17,7 @@ spec:
         tls: true
       - name: external
         port: 9094
-        type: loadbalancer
+        type: nodeport
         tls: false
     config:
       offsets.topic.replication.factor: 3
