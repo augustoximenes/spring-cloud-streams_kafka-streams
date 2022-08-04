@@ -38,6 +38,10 @@ kubectl get csv -n operators
 ```
 
 ## Kafka
+Create namespace:
+```
+kubectl create namespace kafka-streams
+```
 Create/Update Kafka Cluster:
 ```
 kubectl apply -f kafka.yaml
@@ -48,7 +52,7 @@ Find the port of the bootstrap service:
 kubectl get service kafka-cluster-kafka-external-bootstrap -o=jsonpath='{.spec.ports[0].port}{"\n"}'
 ```
 ```
-kubectl exec kafka-cluster-kafka-0 -c kafka -it -n default -- cat /tmp/strimzi.properties | grep advertised
+kubectl exec kafka-cluster-kafka-0 -c kafka -it -n kafka-streams -- cat /tmp/strimzi.properties | grep advertised
 ```
 List the topics:
 ```
