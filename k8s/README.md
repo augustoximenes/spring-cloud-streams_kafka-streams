@@ -58,3 +58,8 @@ List the topics:
 ```
 kcat -b localhost:9094 -L
 ```
+
+Log:
+```
+kubectl  exec kafka-cluster-kafka-0 -- bin/kafka-configs.sh --bootstrap-server kafka-cluster-kafka-bootstrap:9092 --entity-type broker-loggers --entity-name 0 --describe
+```
