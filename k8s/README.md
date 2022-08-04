@@ -38,16 +38,19 @@ kubectl get csv -n operators
 ```
 
 ## Kafka
-Create Kafka Cluster
+Create/Update Kafka Cluster:
 ```
 kubectl apply -f kafka.yaml
 ```
 
 Find the port of the bootstrap service:
 ```
-kubectl get service my-cluster-kafka-external-bootstrap -n my-kafka-project -o=jsonpath='{.spec.ports[0].nodePort}{"\n"}'
+kubectl get service kafka-cluster-kafka-external-bootstrap -o=jsonpath='{.spec.ports[0].port}{"\n"}'
 ```
-Find the IP address of the node:
 ```
-kubectl get nodes --output=jsonpath='{range .items[*]}{.status.addresses[?(@.type=="InternalIP")].address}{"\n"}{end}'
+kubectl exec kafka-cluster-kafka-0 -c kafka -it -n default -- cat /tmp/strimzi.properties | grep advertised
+```
+List the topics:
+```
+kcat -b localhost:9094 -L
 ```
