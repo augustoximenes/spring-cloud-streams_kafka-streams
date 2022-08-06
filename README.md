@@ -60,7 +60,6 @@ bin/kafka-console-producer.sh --topic tp_enrichment_accounts --bootstrap-server 
 ```
 ```
 > {"id": 1}|{"id": 1, "status": "REGULAR"}
-> {"id": 1}|{"id": 1, "status": "IRREGULAR"}
 > {"id": 2}|{"id": 1, "status": "REGULAR"}
 ```
 
