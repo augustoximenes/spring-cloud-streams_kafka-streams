@@ -43,24 +43,24 @@ Prospects
 bin/kafka-console-producer.sh --topic tp_prospects --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
 ```
 ```
-> {"id": 1}|{"id": 1, "name": "augusto"}
-> {"id": 2}|{"id": 2, "name": "silvia"}
+> {"id1": 1, "id2": "a"}|{"id": 1, "name": "augusto"}
+> {"id1": 2, "id2": "b"}|{"id": 2, "name": "silvia"}
 ```
 Accounts
 ```
 bin/kafka-console-producer.sh --topic tp_accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
 ```
 ```
-> {"id": 1}|{"id": 1, "accountNumber": "000.000.000-0"}
-> {"id": 2}|{"id": 2, "accountNumber": "222.222.222-2"}
+> {"id1": 1, "id2": "a"}|{"id": 1, "accountNumber": "000.000.000-0"}
+> {"id1": 2, "id2": "b"}|{"id": 2, "accountNumber": "222.222.222-2"}
 ```
 Enrichment Accounts
 ```
 bin/kafka-console-producer.sh --topic tp_enrichment_accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
 ```
 ```
-> {"id": 1}|{"id": 1, "status": "REGULAR"}
-> {"id": 2}|{"id": 1, "status": "REGULAR"}
+> {"id1": 1, "id2": "a"}|{"id": 1, "status": "REGULAR"}
+> {"id1": 2, "id2": "b"}|{"id": 2, "status": "IRREGULAR"}
 ```
 
 ### Message Consumer
