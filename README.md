@@ -67,13 +67,10 @@ bin/kafka-console-producer.sh --topic tp_enrichment_accounts --bootstrap-server 
 ```
 bin/kafka-console-consumer.sh --topic tp_clients --from-beginning --bootstrap-server localhost:9092  --property parse.key=true --property key.separator="|"
 ```
-
-## Table-Table Join
-Code:
-![Diagram](docs/imgs/table_table_join_code.png)
-
-Result:
-![Diagram](docs/imgs/table_table_join_kafka_messages.png)
+```
+{"id":"1","name":"augusto","accountNumber":"000.000.000-0","status":"REGULAR"}
+{"id":"2","name":"silvia","accountNumber":"222.222.222-2","status":"IRREGULAR"}
+```
 
 ## State Store
 A stateful processor may use one or more state stores. Each task that contains a stateful processor has exclusive access to the state stores in the processor. That means a topology with two state stores and five input partitions will lead to five tasks, and each task will own two state stores resulting in 10 state stores in total for your Kafka Streams application.
