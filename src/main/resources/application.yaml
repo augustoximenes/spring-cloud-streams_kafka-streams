@@ -16,6 +16,10 @@ management:
           - prometheus
           - "*"
 
+#logging:
+  #level:
+    #root: DEBUG
+
 spring:
   cloud:
     stream:
@@ -35,7 +39,9 @@ spring:
           binder:
             applicationId: streams
             #brokers: broker:9093
+            #brokers: streams-kafka-bootstrap.kafka-streams.svc:9092
             brokers: localhost:9092
+            #brokers: localhost:32069
             configuration:
               #num:
                 #stream:

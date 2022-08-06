@@ -16,10 +16,10 @@ $ cd desenvolvimento/kafka
 
 ### Start Kafka
 ```
-$ bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 ```
-$ bin/kafka-server-start.sh config/server.properties
+bin/kafka-server-start.sh config/server.properties
 ```
 
 ### Create Topics
@@ -38,22 +38,35 @@ $ bin/kafka-topics.sh --create --topic streams-tp_enrichment_accounts-state-stor
 ```
 
 ### Message Producer
+Prospects
 ```
-$ bin/kafka-console-producer.sh --topic tp_prospects --bootstrap-server localhost:9092 --property parse.key=true --property key.separator=":"
-> 1:{"id": 1, "name": "augusto"}
-```
-```
-$ bin/kafka-console-producer.sh --topic tp_accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator=":"
-> 1:{"id": 1, "accountNumber": "000.000.000-0"}
+bin/kafka-console-producer.sh --topic tp_prospects --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
 ```
 ```
-$ bin/kafka-console-producer.sh --topic tp_enrichment_accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator=":"
-> 1:{"id": 1, "status": "REGULAR"}
+> {"id": 1}|{"id": 1, "name": "augusto"}
+> {"id": 2}|{"id": 2, "name": "silvia"}
+```
+Accounts
+```
+bin/kafka-console-producer.sh --topic tp_accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
+```
+```
+> {"id": 1}|{"id": 1, "accountNumber": "000.000.000-0"}
+> {"id": 2}|{"id": 2, "accountNumber": "222.222.222-2"}
+```
+Enrichment Accounts
+```
+bin/kafka-console-producer.sh --topic tp_enrichment_accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
+```
+```
+> {"id": 1}|{"id": 1, "status": "REGULAR"}
+> {"id": 1}|{"id": 1, "status": "IRREGULAR"}
+> {"id": 2}|{"id": 1, "status": "REGULAR"}
 ```
 
 ### Message Consumer
 ```
-$ bin/kafka-console-consumer.sh --topic tp_clients --from-beginning --bootstrap-server localhost:9092  --property parse.key=true --property key.separator=":"
+bin/kafka-console-consumer.sh --topic tp_clients --from-beginning --bootstrap-server localhost:9092  --property parse.key=true --property key.separator="|"
 ```
 
 ## Table-Table Join

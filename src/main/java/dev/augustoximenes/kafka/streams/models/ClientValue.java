@@ -1,12 +1,18 @@
 package dev.augustoximenes.kafka.streams.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class Account {
+@AllArgsConstructor
+public class ClientValue {
     @JsonProperty
     private String id;
     @JsonProperty
+    private String name;
+    @JsonProperty
     private String accountNumber;
+    @JsonProperty
+    private String status;
 }
