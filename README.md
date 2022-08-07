@@ -76,6 +76,12 @@ The record below does not appear due to the applied filter (line 47: clientValue
 {"id3":"222.222.222-2"}|{"id":"2","name":"silvia","accountNumber":"222.222.222-2","status":"IRREGULAR"}
 ```
 
+## Topology
+
+Copy topology from http://localhost:8080/actuator/kafkastreamstopology and past into visualizar https://zz85.github.io/kafka-streams-viz
+
+![Diagram](docs/imgs/topology.png)
+
 ## State Store
 A stateful processor may use one or more state stores. Each task that contains a stateful processor has exclusive access to the state stores in the processor. That means a topology with two state stores and five input partitions will lead to five tasks, and each task will own two state stores resulting in 10 state stores in total for your Kafka Streams application.
 
