@@ -1,4 +1,4 @@
-package dev.augustoximenes.kafka.streams.models;
+package dev.augustoximenes.kafka.streams.models.keys;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

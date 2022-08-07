@@ -65,11 +65,15 @@ bin/kafka-console-producer.sh --topic tp_enrichment_accounts --bootstrap-server 
 
 ### Message Consumer
 ```
-bin/kafka-console-consumer.sh --topic tp_clients --from-beginning --bootstrap-server localhost:9092  --property parse.key=true --property key.separator="|"
+bin/kafka-console-consumer.sh --topic tp_clients --from-beginning --bootstrap-server localhost:9092  --property parse.key=true --property print.key=true --property key.separator="|"
 ```
+With new Key, the record can be redirected to a new partition.
 ```
-{"id":"1","name":"augusto","accountNumber":"000.000.000-0","status":"REGULAR"}
-{"id":"2","name":"silvia","accountNumber":"222.222.222-2","status":"IRREGULAR"}
+{"id3":"000.000.000-0"}|{"id":"1","name":"augusto","accountNumber":"000.000.000-0","status":"REGULAR"}
+```
+The record below does not appear due to the applied filter (line 47: clientValue.getStatus().equals("REGULAR")).
+```
+{"id3":"222.222.222-2"}|{"id":"2","name":"silvia","accountNumber":"222.222.222-2","status":"IRREGULAR"}
 ```
 
 ## State Store
