@@ -31,12 +31,14 @@ public class StreamsApplication {
 					KStream<ClientKey, ClientValue>>>> process() {
 		return prospectTable -> (
 				accountTable -> (
-					enrichmentAccountTable -> (prospectTable
+					enrichmentAccountTable -> (
+						prospectTable
 						.join(
 							accountTable,
 							(prospectValue, accountValue) -> new ClientValue(prospectValue.getId(), prospectValue.getName(), accountValue.getAccountNumber(), null)
 						)
-						.join(enrichmentAccountTable,
+						.join(
+							enrichmentAccountTable,
 							(clientValue, enrichmentAccountValue) -> {
 								clientValue.setStatus(enrichmentAccountValue.getStatus());
 								return clientValue;
