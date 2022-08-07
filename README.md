@@ -78,7 +78,7 @@ The record below does not appear due to the applied filter (line 47: clientValue
 
 ## Topology
 
-Copy topology from http://localhost:8080/actuator/kafkastreamstopology and past into visualizar https://zz85.github.io/kafka-streams-viz
+Copy topology from http://localhost:8080/actuator/kafkastreamstopology and past into visualizer https://zz85.github.io/kafka-streams-viz
 
 ![Diagram](docs/imgs/topology.png)
 
