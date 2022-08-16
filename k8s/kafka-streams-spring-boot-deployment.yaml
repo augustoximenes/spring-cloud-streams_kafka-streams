@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-streams-spring-boot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-streams-spring-boot
+  template:
+    metadata:
+      labels:
+        app: kafka-streams-spring-boot
+    spec:
+      containers:
+        - name: kafka-streams-spring-boot
+          image: kafka-streams-spring-boot:latest
+          imagePullPolicy: Never
