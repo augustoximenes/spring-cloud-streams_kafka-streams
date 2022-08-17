@@ -24,23 +24,23 @@ bin/kafka-server-start.sh config/server.properties
 
 ### Create Topics
 ```
-$ bin/kafka-topics.sh --create --topic tp_prospects --partitions 4 --bootstrap-server localhost:9092
-$ bin/kafka-topics.sh --create --topic tp_accounts --partitions 4 --bootstrap-server localhost:9092
-$ bin/kafka-topics.sh --create --topic tp_enrichment_accounts --partitions 4 --bootstrap-server localhost:9092
-$ bin/kafka-topics.sh --create --topic tp_clients --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic tp-prospects --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic tp-accounts --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic tp-enrichment-accounts --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic tp-clients --partitions 4 --bootstrap-server localhost:9092
 ```
 
 ### Create Changelog Topics
 ```
-$ bin/kafka-topics.sh --create --topic streams-tp_prospects-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
-$ bin/kafka-topics.sh --create --topic streams-tp_accounts-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
-$ bin/kafka-topics.sh --create --topic streams-tp_enrichment_accounts-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic streams-tp-prospects-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic streams-tp-accounts-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --create --topic streams-tp-enrichment-accounts-state-store-changelog --partitions 4 --bootstrap-server localhost:9092
 ```
 
 ### Message Producer
 Prospects
 ```
-bin/kafka-console-producer.sh --topic tp_prospects --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
+bin/kafka-console-producer.sh --topic tp-prospects --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
 ```
 ```
 > {"id1": 1, "id2": "a"}|{"id": 1, "name": "augusto"}
@@ -48,7 +48,7 @@ bin/kafka-console-producer.sh --topic tp_prospects --bootstrap-server localhost:
 ```
 Accounts
 ```
-bin/kafka-console-producer.sh --topic tp_accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
+bin/kafka-console-producer.sh --topic tp-accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
 ```
 ```
 > {"id1": 1, "id2": "a"}|{"id": 1, "accountNumber": "000.000.000-0"}
@@ -56,7 +56,7 @@ bin/kafka-console-producer.sh --topic tp_accounts --bootstrap-server localhost:9
 ```
 Enrichment Accounts
 ```
-bin/kafka-console-producer.sh --topic tp_enrichment_accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
+bin/kafka-console-producer.sh --topic tp-enrichment-accounts --bootstrap-server localhost:9092 --property parse.key=true --property key.separator="|"
 ```
 ```
 > {"id1": 1, "id2": "a"}|{"id": 1, "status": "REGULAR"}
@@ -65,7 +65,7 @@ bin/kafka-console-producer.sh --topic tp_enrichment_accounts --bootstrap-server 
 
 ### Message Consumer
 ```
-bin/kafka-console-consumer.sh --topic tp_clients --from-beginning --bootstrap-server localhost:9092  --property parse.key=true --property print.key=true --property key.separator="|"
+bin/kafka-console-consumer.sh --topic tp-clients --from-beginning --bootstrap-server localhost:9092  --property parse.key=true --property print.key=true --property key.separator="|"
 ```
 With new Key, the record can be redirected to a new partition.
 ```

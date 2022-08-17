@@ -27,13 +27,13 @@ spring:
         definition: process
         bindings:
           process-in-0:
-            destination: tp_prospects
+            destination: tp-prospects
           process-in-1:
-            destination: tp_accounts
+            destination: tp-accounts
           process-in-2:
-            destination: tp_enrichment_accounts
+            destination: tp-enrichment-accounts
           process-out-0:
-            destination: tp_clients
+            destination: tp-clients
       kafka:
         streams:
           binder:
@@ -51,10 +51,10 @@ spring:
           bindings:
             tp_prospects:
               consumer:
-                materializedAs: tp_prospects-state-store
+                materializedAs: tp-prospects-state-store
             tp_accounts:
               consumer:
-                materializedAs: tp_accounts-state-store
+                materializedAs: tp-accounts-state-store
             tp_enrichment_accounts:
               consumer:
-                materializedAs: tp_enrichment_accounts-state-store
+                materializedAs: tp-enrichment-accounts-state-store
