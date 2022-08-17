@@ -14,7 +14,7 @@ After install, watch your operator come up using next command.
 kubectl get csv -n operators
 ```
 
-## Start Kafka
+# Kafka Cluster
 Create namespace:
 ```
 kubectl create namespace kafka-streams
@@ -32,7 +32,7 @@ List the topics:
 kcat -b localhost:32069 -L
 ```
 
-## Start Kafka Streams Spring Boot Project
+# Kafka Streams Spring Boot Project
 Package the project:
 ```
 mvn clean package -Dmaven.test.skip
