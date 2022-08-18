@@ -21,7 +21,7 @@ kubectl create namespace kafka-streams
 ```
 Create/Update Kafka Cluster:
 ```
-kubectl apply -f kafka.yaml -n kafka-streams
+kubectl apply -f kafka-streams-cluster.yaml -n kafka-streams
 ```
 Create topics:
 ```
