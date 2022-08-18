@@ -16,3 +16,15 @@ spec:
         - name: kafka-streams-spring-boot
           image: kafka-streams-spring-boot:latest
           imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-streams-spring-boot
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: kafka-streams-spring-boot
