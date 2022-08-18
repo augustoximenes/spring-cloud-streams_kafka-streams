@@ -1,0 +1,69 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: tp-prospects
+  labels:
+    strimzi.io/cluster: streams
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: tp-prospects-state-store
+  labels:
+    strimzi.io/cluster: streams
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: tp-enrichment-accounts
+  labels:
+    strimzi.io/cluster: streams
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: tp-enrichment-accounts-state-store
+  labels:
+    strimzi.io/cluster: streams
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: tp-clients
+  labels:
+    strimzi.io/cluster: streams
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: tp-accounts
+  labels:
+    strimzi.io/cluster: streams
+spec:
+  partitions: 3
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: tp-accounts-state-store
+  labels:
+    strimzi.io/cluster: streams
+spec:
+  partitions: 3
+  replicas: 1

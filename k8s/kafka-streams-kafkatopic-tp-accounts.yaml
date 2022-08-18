@@ -1,9 +1,0 @@
-apiVersion: kafka.strimzi.io/v1beta1
-kind: KafkaTopic
-metadata:
-  name: tp-accounts
-  labels:
-    strimzi.io/cluster: streams
-spec:
-  partitions: 3
-  replicas: 1
