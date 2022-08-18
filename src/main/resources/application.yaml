@@ -39,7 +39,7 @@ spring:
           binder:
             applicationId: streams
             #brokers: broker:9093
-            brokers: streams-kafka-bootstrap.kafka-streams.svc.cluster.local:9092
+            brokers: kafka-cluster-kafka-bootstrap.kafka-streams.svc.cluster.local:9092
             #brokers: localhost:9092
             #brokers: localhost:32069
             configuration:

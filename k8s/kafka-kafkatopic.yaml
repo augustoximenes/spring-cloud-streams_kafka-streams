@@ -3,7 +3,7 @@ kind: KafkaTopic
 metadata:
   name: tp-prospects
   labels:
-    strimzi.io/cluster: streams
+    strimzi.io/cluster: kafka-cluster
 spec:
   partitions: 3
   replicas: 1
@@ -13,7 +13,7 @@ kind: KafkaTopic
 metadata:
   name: tp-prospects-state-store
   labels:
-    strimzi.io/cluster: streams
+    strimzi.io/cluster: kafka-cluster
 spec:
   partitions: 3
   replicas: 1
@@ -23,7 +23,7 @@ kind: KafkaTopic
 metadata:
   name: tp-enrichment-accounts
   labels:
-    strimzi.io/cluster: streams
+    strimzi.io/cluster: kafka-cluster
 spec:
   partitions: 3
   replicas: 1
@@ -33,7 +33,7 @@ kind: KafkaTopic
 metadata:
   name: tp-enrichment-accounts-state-store
   labels:
-    strimzi.io/cluster: streams
+    strimzi.io/cluster: kafka-cluster
 spec:
   partitions: 3
   replicas: 1
@@ -43,7 +43,7 @@ kind: KafkaTopic
 metadata:
   name: tp-clients
   labels:
-    strimzi.io/cluster: streams
+    strimzi.io/cluster: kafka-cluster
 spec:
   partitions: 3
   replicas: 1
@@ -53,7 +53,7 @@ kind: KafkaTopic
 metadata:
   name: tp-accounts
   labels:
-    strimzi.io/cluster: streams
+    strimzi.io/cluster: kafka-cluster
 spec:
   partitions: 3
   replicas: 1
@@ -63,7 +63,7 @@ kind: KafkaTopic
 metadata:
   name: tp-accounts-state-store
   labels:
-    strimzi.io/cluster: streams
+    strimzi.io/cluster: kafka-cluster
 spec:
   partitions: 3
   replicas: 1
