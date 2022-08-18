@@ -23,13 +23,9 @@ Create/Update Kafka Cluster:
 ```
 kubectl apply -f kafka.yaml -n kafka-streams
 ```
-Find the port of the bootstrap service:
+Create topics:
 ```
-kubectl get service streams-kafka-external-bootstrap -o=jsonpath='{.spec.ports[0].nodePort}{"\n"}' -n kafka-streams
-```
-List the topics:
-```
-kcat -b localhost:32069 -L
+kubectl apply -f kafka-streams-kafkatopic.yaml -n kafka-streams
 ```
 
 # Kafka Streams Spring Boot Project
@@ -43,16 +39,5 @@ docker build -t kafka-streams-spring-boot .
 ```
 Deploy the project:
 ```
-kubectl apply -f kafka-streams-spring-boot-deployment.yaml -n kafka-streams
-```
-```
-kubectl apply -f kafka-streams-spring-boot-service.yaml -n kafka-streams
-```
-Describe the pod
-```
-kubectl describe pod kafka-streams-spring-boot-5dcdfd9844-8nbv5 -n kafka-streams
-```
-Get logs from the pod
-```
-kubectl logs -f -n kafka-streams kafka-streams-spring-boot-58d8cfb987-hftzb
+kubectl apply -f kafka-streams-spring-boot.yaml -n kafka-streams
 ```
