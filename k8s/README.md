@@ -43,3 +43,18 @@ Deploy the project:
 ```
 kubectl apply -f kafka-streams-spring-boot.yaml -n kafka-streams
 ```
+
+# Prometheus
+Install Prometheus Operator
+```
+kubectl create -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/master/bundle.yaml
+```
+Configure Prometheus RBAC Permissions
+```
+kubectl apply -f prometheus-rbac.yaml
+```
+Deploy Prometheus
+```
+kubectl apply -f prometheus.yaml
+```
+Reference: https://grafana.com/docs/grafana-cloud/kubernetes-monitoring/prometheus/prometheus_operator
