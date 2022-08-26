@@ -30,20 +30,6 @@ Create topics:
 kubectl apply -f kafka-kafkatopic.yaml -n kafka-streams
 ```
 
-# Kafka Streams Spring Boot Project
-Package the project:
-```
-mvn clean package -Dmaven.test.skip
-```
-Build the image:
-```
-docker build -t kafka-streams-spring-boot .
-```
-Deploy the project:
-```
-kubectl apply -f kafka-streams-spring-boot.yaml -n kafka-streams
-```
-
 # Prometheus
 Install Prometheus Operator
 ```
@@ -58,3 +44,17 @@ Deploy Prometheus
 kubectl apply -f prometheus.yaml
 ```
 Reference: https://grafana.com/docs/grafana-cloud/kubernetes-monitoring/prometheus/prometheus_operator
+
+# Kafka Streams Spring Boot Project
+Package the project:
+```
+mvn clean package -Dmaven.test.skip
+```
+Build the image:
+```
+docker build -t kafka-streams-spring-boot .
+```
+Deploy the project:
+```
+kubectl apply -f kafka-streams-spring-boot.yaml -n kafka-streams
+```
