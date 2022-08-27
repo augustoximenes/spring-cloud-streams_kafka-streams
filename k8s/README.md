@@ -45,6 +45,14 @@ kubectl apply -f prometheus.yaml
 ```
 Reference: https://grafana.com/docs/grafana-cloud/kubernetes-monitoring/prometheus/prometheus_operator
 
+# Grafana
+```
+kubectl apply -f grafana.yaml
+```
+Use admin for both the username and password to login.
+
+Reference: https://grafana.com/docs/grafana/latest/setup-grafana/installation/kubernetes/
+
 # Kafka Streams Spring Boot Project
 Package the project:
 ```
